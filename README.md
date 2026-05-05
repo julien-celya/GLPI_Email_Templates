@@ -10,32 +10,7 @@ This template was sucessfully tested on:
 
 1. Microsoft Outlook 2019/2010
 1. Mozilla Thunderbird 78.3.3
-
-## Screenshots
-
-![Novo acompanhamento (New ticket)](/screenshots/new-ticket.png?raw=true "Novo acompanhamento (New ticket)")
-
-*Novo chamado (New ticket).*
- 
-![Novo acompanhamento (New followup)](/screenshots/new-followup.png?raw=true "Novo acompanhamento (New followup)/Atualização de um acompanhamento (Update of a ticket)")
-
-*Novo acompanhamento (New followup)/Atualização de um acompanhamento (Update of a followup).*
-
-![Novo acompanhamento (New followup)](/screenshots/new-or-update-task.png?raw=true "Nova tarefa (New task)/Atualização de uma tarefa (Update of a task)")
-
-*Nova tarefa (New task)/Atualização de uma tarefa (Update of a task).*
-
-![Chamado solucionado (Ticket solved)](/screenshots/solution.png?raw=true "Chamado solucionado (Ticket solved)")
-
-*Chamado solucionado (Ticket solved).*
-
-![Pesquisa de satisfação (Satisfaction survey)](/screenshots/ticket-satisfaction.png?raw=true "Pesquisa de satisfação (Satisfaction survey)")
-
-*Pesquisa de satisfação (Satisfaction survey).*
-
-![Resposta da pesquisa de satisfação (Satisfaction survey answer)](/screenshots/ticket-satisfaction-response.png?raw=true "Resposta da pesquisa de satisfação (Satisfaction survey answer)")
-
-*Resposta da pesquisa de satisfação (Satisfaction survey).*
+1. Evolution
 
 ## Translation
 
@@ -45,18 +20,24 @@ Another function that has depends on translated strings are ``ticket.isprivate``
 
 You'll need to translate all ``ticket.action`` and ``ticket.isprivate`` function calls into the template files according to your language before deploying it into your GLPI instance if you're not using the language "Português do Brasil" by default into your environment.
 
+Warning : beware, the comparison are case sensitive.
+
+If ``ticket.action`` contains a quote, you need to escape it with : `&#039;`
+
 ## Installation
 
 As cited on "**Translation**" section, it relies on translated strings to detect the notification type (new ticket, new followup, etc) and to detect if a task or followup has been marked as private, so you'll need to create a specific notification template for each language that you would like to support.
 
+In some cases, using the built in Template translations for HTML will mess with your template. I suggest modifying the template directly in the database
+
 ### Tickets Template
 
-1. In **Setup** > **Notifications** > **Notification Templates**, click on **Tickets** in the list.
 1. Click on **Template translations** > **Add a New Translation**.
 1. Select your language into **Language** dropdown, e.g. "Português do Brasil".
 1. Enter the **Subject** of the notification template (Default: ``##ticket.action## ##ticket.title##``)
 1. In **Email text body**, paste the content of the ``Tickets.txt`` template.
-1. In **Email HTML body**, click on the option "Source code" and paste the HTML body of the ``Tickets.html`` template.
+1. Find the id of the template translation for the tickets.
+1. ``UPDATE `glpi`.`glpi_notificationtemplatetranslations` SET `content_html` = '__HTML_CONTENT_HERE__' WHERE `id` = __ID_NOTIFICATION_TEMPLATE_TRANSLATION_HERE__;``
 
 ### Ticket Satisfaction Template
 
@@ -65,7 +46,8 @@ As cited on "**Translation**" section, it relies on translated strings to detect
 1. Select your language into **Language** dropdown, e.g. "Português do Brasil".
 1. Enter the **Subject** of the notification template (Default: ``##ticket.action## ##ticket.title##``)
 1. In **Email text body**, paste the content of the ``Ticket Satisfaction.txt`` template.
-1. In **Email HTML body**, click on the option "Source code" and paste the HTML body of the ``Tickets Satisfaction.html`` template.
+1. Find the id of the template translation for the validations.
+1. ``UPDATE `glpi`.`glpi_notificationtemplatetranslations` SET `content_html` = '__HTML_CONTENT_HERE__' WHERE `id` = __ID_NOTIFICATION_TEMPLATE_TRANSLATION_HERE__;``
 
 ## License
 
