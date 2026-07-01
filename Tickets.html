@@ -57,21 +57,12 @@ Un ticket vous concernant a été mis à jour. Son numéro est <strong>###ticket
 </tr>
 <!--15 ##endifticket.storestatus## -->
 <!--16 ##elseticket.storestatus## -->
-<!--17 ##foreach last 1 followups## ##ifticket.action=Nouveau suivi## -->
+<!--19 ##foreach last 1 followups## ##ifticket.action=Mise à jour d&#039;un suivi## -->
 <tr>
-<td colspan="2" valign="middle" style="background:#e0e0e0;">
-<div style="font-family: arial, helvetica, sans-serif; font-size: 14px; text-align: left;">
-<span style="font-family: arial, helvetica, sans-serif; font-size:12px;">
-<strong>##lang.followup.author##</strong>: ##followup.author##. <br />
-<strong>##lang.followup.date##</strong>: ##followup.date##. <br />
-##IFfollowup.isprivate=Oui## <strong>##lang.followup.isprivate##</strong> <br /> ##ENDIFfollowup.isprivate##
-</span>
-##followup.description##
-</div>
+<td colspan="2" style="text-align: left;">
+<strong>Suivi mis à jour :</strong>
 </td>
 </tr>
-<!--18 ##endifticket.action## ##endforeachfollowups## -->
-<!--19 ##foreach last 1 followups## ##ifticket.action=Mise à jour d&#039;un suivi## -->
 <tr>
 <td colspan="2" valign="middle" style="background:#e0e0e0;">
 <div style="font-family: arial, helvetica, sans-serif; font-size: 14px; text-align: left;">
@@ -82,6 +73,11 @@ Un ticket vous concernant a été mis à jour. Son numéro est <strong>###ticket
 </span>
 ##followup.description##
 </div>
+</td>
+</tr>
+<tr>
+<td >
+<br />
 </td>
 </tr>
 <!--20 ##endifticket.action## ##endforeachfollowups## -->
@@ -100,6 +96,11 @@ Un ticket vous concernant a été mis à jour. Son numéro est <strong>###ticket
 </div>
 </td>
 </tr>
+<tr>
+<td >
+<br />
+</td>
+</tr>
 <!--22 ##endifticket.action## ##endforeachtasks## -->
 <!--23 ##foreach last 1 tasks## ##ifticket.action=Mise à jour d&#039;une tâche## -->
 <tr>
@@ -116,8 +117,28 @@ Un ticket vous concernant a été mis à jour. Son numéro est <strong>###ticket
 </div>
 </td>
 </tr>
+<tr>
+<td >
+<br />
+</td>
+</tr>
 <!--24 ##endifticket.action## ##endforeachtasks## -->
 <!--25 ##endelseticket.storestatus## -->
+
+<!--25.1 ##foreach last 3 followups## -->
+<tr>
+<td colspan="2" valign="middle" style="background:#e0e0e0;">
+<div style="font-family: arial, helvetica, sans-serif; font-size: 14px; text-align: left;">
+<span style="font-family: arial, helvetica, sans-serif; font-size:12px;">
+<strong>##lang.followup.author##</strong>: ##followup.author##. <br />
+<strong>##lang.followup.date##</strong>: ##followup.date##. <br />
+##IFfollowup.isprivate=Oui## <strong>##lang.followup.isprivate##</strong> <br /> ##ENDIFfollowup.isprivate##
+</span>
+##followup.description##
+</div>
+</td>
+</tr>
+<!--25.2 ##endforeachfollowups## -->
 
 <tr>
 <td colspan="2" valign="bottom">
