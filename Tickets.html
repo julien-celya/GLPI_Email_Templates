@@ -15,190 +15,189 @@
 <tr>
 <td colspan="2" valign="top"><br />
 <div style="font-family: arial, helvetica, sans-serif; font-size:14px; text-align: left;">
-<!--1 ##ifticket.isdeleted=Sim## -->
-Un ticket vous concernant vous a été adressé ##lang.ticket.isdeleted##. Son numéro est <strong>###ticket.id##</strong> ayant pour objet <strong>##ticket.title##</strong> concernant <strong>##ticket.shortentity##</strong> ##ifticket.category## dans la catégorie <strong>##ticket.category##</strong>##endifticket.category##.
-<!--2 ##endifticket.isdeleted## -->
-<!--3 ##elseticket.isdeleted## -->
-<!--4 ##ifticket.action=Nouveau ticket## --> 
-Un nouveau ticket, ayant pour objet <strong>##ticket.title##</strong> (###ticket.id##)##ifticket.category## dans la catégorie <strong>##ticket.category##</strong>##endifticket.category####ifticket.authors## a été créé par <strong>##ticket.authors##</strong>##endifticket.authors##.
-<!--5 ##endifticket.action## -->
-<!--6 ##elseticket.action## -->
-<!--7 ##ifticket.storestatus=5## --> 
-Votre ticket a été résolu par le technicien  ##ticket.assigntousers## ou par l&#039;utilisateur. Son numéro est <strong>###ticket.id##</strong> ayant pour objet <strong>##ticket.title##</strong> concernant <strong>##ticket.shortentity##</strong> ##ifticket.category## dans la catégorie <strong>##ticket.category##</strong>##endifticket.category##.
-<!--8 ##endifticket.storestatus## -->
-<!--9 ##elseticket.storestatus## -->
-Un ticket vous concernant a été mis à jour. Son numéro est <strong>###ticket.id##</strong> ayant pour objet <strong>##ticket.title##</strong> concernant <strong>##ticket.shortentity##</strong> ##ifticket.category## dans la catégorie <strong>##ticket.category##</strong>##endifticket.category##.
-<!--10 ##endelseticket.storestatus## -->
-<!--11 ##endelseticket.action## -->
-<!--12 ##endelseticket.isdeleted## -->
+<!--1 ##IFticket.isdeleted=Sim## -->
+  Un ticket vous concernant vous a été adressé ##lang.ticket.isdeleted##. Son numéro est <strong>###ticket.id##</strong> ayant pour objet <strong>##ticket.title##</strong> concernant <strong>##ticket.shortentity##</strong>##IFticket.category## dans la catégorie <strong>##ticket.category##</strong>##ENDIFticket.category##.
+<!--2 ##ENDIFticket.isdeleted## -->
+<!--3 ##ELSEticket.isdeleted## -->
+  <!--4 ##IFticket.action=Nouveau ticket## -->
+    Un nouveau ticket, ayant pour objet <strong>##ticket.title##</strong> (###ticket.id##)##IFticket.category## dans la catégorie <strong>##ticket.category##</strong>##ENDIFticket.category####IFticket.authors## a été créé par <strong>##ticket.authors##</strong>##ENDIFticket.authors##.
+  <!--5 ##ENDIFticket.action## -->
+  <!--6 ##ELSEticket.action## -->
+    <!--7 ##IFticket.storestatus=5## -->
+      Votre ticket a été résolu par le technicien  ##ticket.assigntousers## ou par l&#039;utilisateur. Son numéro est <strong>###ticket.id##</strong> ayant pour objet <strong>##ticket.title##</strong> concernant <strong>##ticket.shortentity##</strong>##IFticket.category## dans la catégorie <strong>##ticket.category##</strong>##ENDIFticket.category##.
+    <!--8 ##ENDIFticket.storestatus## -->
+    <!--9 ##ELSEticket.storestatus## -->
+      Un ticket vous concernant a été mis à jour. Son numéro est <strong>###ticket.id##</strong> ayant pour objet <strong>##ticket.title##</strong> concernant <strong>##ticket.shortentity##</strong>##IFticket.category## dans la catégorie <strong>##ticket.category##</strong>##ENDIFticket.category##.
+    <!--10 ##ENDELSEticket.storestatus## -->
+  <!--11 ##ENDELSEticket.action## -->
+<!--12 ##ENDELSEticket.isdeleted## -->
 </div>
 </td>
 </tr>
-<!--13 ##ifticket.isdeleted=Non## -->
-<!--14 ##ifticket.storestatus=5## -->
+
 <tr>
-<td colspan="2" valign="middle" style="background:#9fd6ed;">
-<div style="font-family: arial, helvetica, sans-serif; font-size: 14px; text-align: left;"><span style="font-family: arial, helvetica, sans-serif; font-size: 12px; text-align: left;"><strong>##lang.ticket.solvedate##</strong>: ##ticket.solvedate##.</span> <br /> ##ticket.solution.description##</div>
+<td colspan="2" valign="bottom">
+<div style="font-family: arial, helvetica, sans-serif; font-size:14px; text-align: left;">
+<!--13 ##IFticket.action=Nouveau ticket## -->
+  Vous devriez recevoir une réponse à ce ticket dans les plus brefs délais.  gardez un œil sur votre e-mail et suivez le ticket au cas où nous aurions besoin de vous demander des informations supplémentaires.
+<!--14 ##ENDIFticket.action## -->
+<!--15 ##ELSEticket.action## -->
+  <!--16 ##IFticket.action=Suppression d&#039;un ticket## -->
+    Ce ticket a été Supprimé. Si vous souhaitez rouvrir ce ticket, veuillez contacter le technicien en charge du ticket.
+  <!--17 ##ENDIFticket.action## -->
+<!--18 ##ENDELSEticket.action## -->
+<!--19 ##IFticket.action=Suppression d&#039;un ticket## -->
+<!--20 ##ENDIFticket.action## -->
+<!--21 ##ELSEticket.action## -->
+  <!--22 ##IFticket.storestatus=5## -->
+    <strong>##lang.ticket.autoclosewarning##</strong>.<br />
+    <!-- Vous pouvez consulter le ticket ici : <strong><a href="##ticket.url##">##ticket.url##</a></strong>. -->
+  <!--23 ##ENDIFticket.storestatus## -->
+  <!--24 ##ELSEticket.storestatus## -->
+    Le statut actuel de ce ticket est <strong>##ticket.status##</strong><!-- (##ticket.storestatus##) -->
+  <!--25 ##ENDELSEticket.storestatus## -->
+<!--26 ##ENDELSEticket.action## -->
+</div>
 </td>
 </tr>
-<tr>
-<td colspan="2" align="center">
-<table border="0" cellpadding="5" cellspacing="5">
+
+<!--27 ##IFticket.isdeleted=Non## -->
+  <!--28 ##IFticket.storestatus=5## -->
+  <!--29 ##ENDIFticket.storestatus## -->
+  <!--30 ##ELSEticket.storestatus## -->
+    <tr>
+    <td colspan="2" valign="bottom">
+    <div style="font-family: arial, helvetica, sans-serif; font-size:14px; text-align: left;">
+    Si vous souhaitez répondre à ce message, veuillez répondre en cliquant sur le lien suivant : <strong><a href="##ticket.url##">##ticket.url##</a></strong>.
+    </div>
+    </td>
+    </tr>
+  <!--31 ##ENDELSEticket.storestatus## -->
+<!--32 ##ENDIFticket.isdeleted## -->
+<!--33 ##ELSEticket.isdeleted## -->
   <tr>
-    <td height="33" valign="middle" align="center" style="font-family: arial, helvetica, sans-serif; font-size: 14px; color: #cf142b; border:1px solid #cf142b;">
-      <a href="##ticket.urlapprove##" style="color: #cf142b; font-weight: bold; text-decoration: none;">Refuser la solution</a>
-    </td>
-    <td height="33" valign="middle" align="center" style="font-family: arial, helvetica, sans-serif; font-size: 14px; color: #2c729e; border:1px solid #2c729e;">
-      <a href="##ticket.urlapprove##" style="color: #2c729e; font-weight: bold; text-decoration: none;">Approuver la solution</a>
-    </td>
+  <td colspan="2" valign="bottom">
+  <div style="font-family: arial, helvetica, sans-serif; font-size:14px; text-align: left;">
+  Si vous souhaitez rouvrir ce ticket d&#039;assistance, veuillez contacter le technicien en charge du ticket.
+  </div>
+  </td>
   </tr>
-</table>
-</td>
-</tr>
-<!--15 ##endifticket.storestatus## -->
-<!--16 ##elseticket.storestatus## -->
-<!--19 ##foreach last 1 followups## ##ifticket.action=Mise à jour d&#039;un suivi## -->
-<tr>
-<td colspan="2" style="text-align: left;">
-<strong>Suivi mis à jour :</strong>
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="middle" style="background:#e0e0e0;">
-<div style="font-family: arial, helvetica, sans-serif; font-size: 14px; text-align: left;">
-<span style="font-family: arial, helvetica, sans-serif; font-size:12px;">
-<strong>##lang.followup.author##</strong>: ##followup.author##. <br />
-<strong>##lang.followup.date##</strong>: ##followup.date##.<br />
-##IFfollowup.isprivate=Oui## <strong>##lang.followup.isprivate##</strong> <br /> ##ENDIFfollowup.isprivate##
-</span>
-##followup.description##
-</div>
-</td>
-</tr>
-<tr>
-<td >
-<br />
-</td>
-</tr>
-<!--20 ##endifticket.action## ##endforeachfollowups## -->
-<!--21 ##foreach last 1 tasks## ##ifticket.action=Nouvelle tâche## -->
-<tr>
-<td colspan="2" valign="middle" style="background:#feda90;">
-<div style="font-family: arial, helvetica, sans-serif; font-size: 14px; text-align: left;">
-<span style="font-family: arial, helvetica, sans-serif; font-size:12px; text-align: left;">
-<strong>##lang.task.author##</strong>: ##task.author##. <br />
-<strong>##lang.task.date##</strong>: ##task.date##. <br />
-<strong>##lang.task.status##</strong>: ##task.status##. <br />
-##IFtask.isprivate=Oui## <strong>##lang.task.isprivate##</strong> <br /> ##ENDIFtask.isprivate##
-</span>
-<img src="https://glpi.celya.fr/pics/timeline/##iftask.status=Fait##done.png##endiftask.status####elsetask.status##todo.png##endelsetask.status##" alt="##task.status##" width="16" height="16" />
-##task.description##
-</div>
-</td>
-</tr>
-<tr>
-<td >
-<br />
-</td>
-</tr>
-<!--22 ##endifticket.action## ##endforeachtasks## -->
-<!--23 ##foreach last 1 tasks## ##ifticket.action=Mise à jour d&#039;une tâche## -->
-<tr>
-<td colspan="2" valign="middle" style="background:#feda90;">
-<div style="font-family: arial, helvetica, sans-serif; font-size: 14px; text-align: left;">
-<span style="font-family: arial, helvetica, sans-serif; font-size:12px; text-align: left;">
-<strong>##lang.task.author##</strong>: ##task.author##. <br />
-<strong>##lang.task.date##</strong>: ##task.date##. <br />
-<strong>##lang.task.status##</strong>: ##task.status##. <br />
-##IFtask.isprivate=Oui## <strong>##lang.task.isprivate##</strong> <br /> ##ENDIFtask.isprivate##
-</span>
-<img src="https://glpi.celya.fr/pics/timeline/##iftask.status=Fait##done.png##endiftask.status####elsetask.status##todo.png##endelsetask.status##" alt="##task.status##" width="16" height="16" />
-##task.description##
-</div>
-</td>
-</tr>
-<tr>
-<td >
-<br />
-</td>
-</tr>
-<!--24 ##endifticket.action## ##endforeachtasks## -->
-<!--25 ##endelseticket.storestatus## -->
+<!--34 ##ENDELSEticket.isdeleted## -->
 
-<!--25.1 ##foreach last 3 followups## -->
-<tr>
-<td colspan="2" valign="middle" style="background:#e0e0e0;">
-<div style="font-family: arial, helvetica, sans-serif; font-size: 14px; text-align: left;">
-<span style="font-family: arial, helvetica, sans-serif; font-size:12px;">
-<strong>##lang.followup.author##</strong>: ##followup.author##. <br />
-<strong>##lang.followup.date##</strong>: ##followup.date##. <br />
-##IFfollowup.isprivate=Oui## <strong>##lang.followup.isprivate##</strong> <br /> ##ENDIFfollowup.isprivate##
-</span>
-##followup.description##
-</div>
-</td>
-</tr>
-<!--25.2 ##endforeachfollowups## -->
+<!--35 ##IFticket.isdeleted=Non## -->
+  <!--36 ##IFticket.storestatus=5## -->
+    <tr>
+    <td colspan="2" valign="middle" style="background:#9fd6ed;">
+    <div style="font-family: arial, helvetica, sans-serif; font-size: 14px; text-align: left;"><span style="font-family: arial, helvetica, sans-serif; font-size: 12px; text-align: left;"><strong>##lang.ticket.solvedate##</strong>: ##ticket.solvedate##.</span> <br /> ##ticket.solution.description##</div>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="2" align="center">
+    <table border="0" cellpadding="5" cellspacing="5">
+      <tr>
+        <td height="33" valign="middle" align="center" style="font-family: arial, helvetica, sans-serif; font-size: 14px; color: #cf142b; border:1px solid #cf142b;">
+          <a href="##ticket.urlapprove##" style="color: #cf142b; font-weight: bold; text-decoration: none;">Refuser la solution</a>
+        </td>
+        <td height="33" valign="middle" align="center" style="font-family: arial, helvetica, sans-serif; font-size: 14px; color: #2c729e; border:1px solid #2c729e;">
+          <a href="##ticket.urlapprove##" style="color: #2c729e; font-weight: bold; text-decoration: none;">Approuver la solution</a>
+        </td>
+      </tr>
+    </table>
+    </td>
+    </tr>
+  <!--37 ##ENDIFticket.storestatus## -->
+  <!--38 ##ELSEticket.storestatus## -->
+    <!--39 ##FOREACH last 1 followups## ##IFticket.action=Mise à jour d&#039;un suivi## -->
+      <tr>
+      <td colspan="2" style="text-align: left;">
+      <strong>Suivi mis à jour :</strong>
+      </td>
+      </tr>
+      <tr>
+      <td colspan="2" valign="middle" style="background:#e0e0e0;">
+      <div style="font-family: arial, helvetica, sans-serif; font-size: 14px; text-align: left;">
+      <span style="font-family: arial, helvetica, sans-serif; font-size:12px;">
+      <strong>##lang.followup.author##</strong>: ##followup.author##. <br />
+      <strong>##lang.followup.date##</strong>: ##followup.date##.<br />
+      ##IFfollowup.isprivate=Oui## <strong>##lang.followup.isprivate##</strong> <br /> ##ENDIFfollowup.isprivate##
+      </span>
+      ##followup.description##
+      </div>
+      </td>
+      </tr>
+      <tr>
+      <td >
+      <br />
+      </td>
+      </tr>
+    <!--40 ##ENDIFticket.action## ##ENDFOREACHfollowups## -->
+    <!--41 ##FOREACH last 1 tasks## ##IFticket.action=Nouvelle tâche## -->
+      <tr>
+      <td colspan="2" valign="middle" style="background:#feda90;">
+      <div style="font-family: arial, helvetica, sans-serif; font-size: 14px; text-align: left;">
+      <span style="font-family: arial, helvetica, sans-serif; font-size:12px; text-align: left;">
+      <strong>##lang.task.author##</strong>: ##task.author##. <br />
+      <strong>##lang.task.date##</strong>: ##task.date##. <br />
+      <strong>##lang.task.status##</strong>: ##task.status##. <br />
+      ##IFtask.isprivate=Oui## <strong>##lang.task.isprivate##</strong> <br /> ##ENDIFtask.isprivate##
+      </span>
+      <img src="https://glpi.celya.fr/pics/timeline/##IFtask.status=Fait##done.png##ENDIFtask.status####ELSEtask.status##todo.png##ENDELSEtask.status##" alt="##task.status##" width="16" height="16" />
+      ##task.description##
+      </div>
+      </td>
+      </tr>
+      <tr>
+      <td >
+      <br />
+      </td>
+      </tr>
+    <!--42 ##ENDIFticket.action## ##ENDFOREACHtasks## -->
+    <!--43 ##FOREACH last 1 tasks## ##IFticket.action=Mise à jour d&#039;une tâche## -->
+      <tr>
+      <td colspan="2" valign="middle" style="background:#feda90;">
+      <div style="font-family: arial, helvetica, sans-serif; font-size: 14px; text-align: left;">
+      <span style="font-family: arial, helvetica, sans-serif; font-size:12px; text-align: left;">
+      <strong>##lang.task.author##</strong>: ##task.author##. <br />
+      <strong>##lang.task.date##</strong>: ##task.date##. <br />
+      <strong>##lang.task.status##</strong>: ##task.status##. <br />
+      ##IFtask.isprivate=Oui## <strong>##lang.task.isprivate##</strong> <br /> ##ENDIFtask.isprivate##
+      </span>
+      <img src="https://glpi.celya.fr/pics/timeline/##IFtask.status=Fait##done.png##ENDIFtask.status####ELSEtask.status##todo.png##ENDELSEtask.status##" alt="##task.status##" width="16" height="16" />
+      ##task.description##
+      </div>
+      </td>
+      </tr>
+      <tr>
+      <td >
+      <br />
+      </td>
+      </tr>
+    <!--44 ##ENDIFticket.action## ##ENDFOREACHtasks## -->
+  <!--45 ##ENDELSEticket.storestatus## -->
+<!--46 ##ENDIFticket.isdeleted## -->
 
-<tr>
-<td colspan="2" valign="bottom">
-<div style="font-family: arial, helvetica, sans-serif; font-size:14px; text-align: left;">
-<!--26 ##ifticket.action=Nouveau ticket## --> 
-Vous devriez recevoir une réponse à ce ticket dans les plus brefs délais.  gardez un œil sur votre e-mail et suivez le ticket au cas où nous aurions besoin de vous demander des informations supplémentaires.
-<!--27 ##endifticket.action## -->
-<!--27.1 ##elseticket.action## -->
-<!--27.2 ##ifticket.action=Suppression d&#039;un ticket## -->
-Ce ticket a été Supprimé. Si vous souhaitez rouvrir ce ticket, veuillez contacter le technicien en charge du ticket.
-<!--27.3 ##endifticket.action## -->
-<!--27.4 ##endelseticket.action## -->
-<!--27.5 ##ifticket.action=Suppression d&#039;un ticket## -->
-<!--27.6 ##endifticket.action## -->
-<!--28 ##elseticket.action## -->
-<!--29 ##ifticket.storestatus=5## -->
-<strong>##lang.ticket.autoclosewarning##</strong>.<br />
-Vous pouvez consulter le ticket ici : <strong><a href="##ticket.url##">##ticket.url##</a></strong>.
-<!--30 ##endifticket.storestatus## -->
-<!--31 ##elseticket.storestatus## -->
-Le statut actuel de ce ticket est <strong>##ticket.status##</strong><!-- (##ticket.storestatus##) -->
-<!--32 ##endelseticket.storestatus## -->
-<!--33 ##endelseticket.action## -->
-</div>
-</td>
-</tr>
 
-<!--35 ##ifticket.storestatus=5## --> 
-<!--36 ##endifticket.storestatus## -->
-<!--37 ##elseticket.storestatus## -->
-<tr>
-<td colspan="2" valign="bottom">
-<div style="font-family: arial, helvetica, sans-serif; font-size:14px; text-align: left;">
-<!--44 ##ifticket.storestatus=6## -->
-Si vous souhaitez rouvrir ce ticket d&#039;assistance, veuillez contacter le technicien en charge du ticket ou cliquez sur le lien suivant : <strong><a href="##ticket.url##">##ticket.url##</a></strong>.
-<!--45 ##endifticket.storestatus## -->
-<!--46 ##elseticket.storestatus## -->
-Si vous souhaitez répondre à ce message, veuillez répondre en cliquant sur le lien suivant : <strong><a href="##ticket.url##">##ticket.url##</a></strong>.
-<!--47 ##endelseticket.storestatus## -->
-<!--48 ##endelseticket.action## -->
-</div>
-</td>
-</tr>
-<!--50 ##endelseticket.storestatus## -->
-<!--13-34 ##endifticket.isdeleted## -->
-<!-- ##elseticket.isdeleted## -->
-<tr>
-<td colspan="2" valign="bottom">
-<div style="font-family: arial, helvetica, sans-serif; font-size:14px; text-align: left;">
-Si vous souhaitez rouvrir ce ticket d&#039;assistance, veuillez contacter le technicien en charge du ticket.
-</div>
-</td>
-</tr>
-<!--40 ##endelseticket.isdeleted## -->
+<!--47 ##FOREACH last 3 followups## -->
+  <tr>
+  <td colspan="2" valign="middle" style="background:#e0e0e0;">
+  <div style="font-family: arial, helvetica, sans-serif; font-size: 14px; text-align: left;">
+  <span style="font-family: arial, helvetica, sans-serif; font-size:12px;">
+  <strong>##lang.followup.author##</strong>: ##followup.author##. <br />
+  <strong>##lang.followup.date##</strong>: ##followup.date##. <br />
+  ##IFfollowup.isprivate=Oui## <strong>##lang.followup.isprivate##</strong> <br /> ##ENDIFfollowup.isprivate##
+  </span>
+  ##followup.description##
+  </div>
+  </td>
+  </tr>
+<!--48 ##ENDFOREACHfollowups## -->
+
 <tr>
 <td colspan="2" valign="middle" style="background:#e2f2e3;">
 <div style="font-family: arial, helvetica, sans-serif; font-size: 14px; text-align: left;">
 <span style="font-family: arial, helvetica, sans-serif; font-size:12px; text-align: left;"> <strong>Demande d&#039;origine :</strong> </span> <br />
 <span style="font-family: arial, helvetica, sans-serif; font-size:12px; text-align: left;"> Entité : ##ticket.shortentity## </span> <br />
-<span style="font-family: arial, helvetica, sans-serif; font-size:12px; text-align: left;"> ##lang.ticket.authors## : ##ifticket.authors## ##ticket.authors## ##endifticket.authors## ##elseticket.authors##--##endelseticket.authors## </span> <br />
+<span style="font-family: arial, helvetica, sans-serif; font-size:12px; text-align: left;"> ##lang.ticket.authors## : ##IFticket.authors## ##ticket.authors## ##ENDIFticket.authors## ##ELSEticket.authors##--##ENDELSEticket.authors## </span> <br />
 ##IFticket.assigntousers##<span style="font-family: arial, helvetica, sans-serif; font-size:12px; text-align: left;"> ##lang.ticket.assigntousers## : ##ticket.assigntousers## </span> <br />##ENDIFticket.assigntousers##
 ##ticket.content## <br />
 </div>
